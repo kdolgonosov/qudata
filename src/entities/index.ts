@@ -1,0 +1,1 @@
+export {SliderItem} from '@/entities/SliderItem/SliderItem'
