@@ -1,0 +1,207 @@
+@import "tailwindcss";
+
+/* wip */
+@theme {
+  /* breakpoints */
+  --breakpoint-xs: 375px;
+  --breakpoint-sm: 540px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px;
+  --breakpoint-3xl: 1920px;
+
+  /* typography */
+  --font-main: var(--font-wix-madefor-text);
+
+  /* --tracking-1: -1px;
+  --tracking-2: -2px;
+  --tracking-3: -3px; */
+
+  /* Title component */
+  --text-title: 96px;
+  --leading-title: 0.85;
+  --tracking-title: -3px;
+
+  --color-title-color: #fff;
+  --color-dimmed-12: rgba(255, 255, 255, 0.125);
+  --color-dimmed-25: rgba(255, 255, 255, 0.25);
+  --color-dimmed-40: rgba(255, 255, 255, 0.4);
+  --color-dimmed-50: rgba(255, 255, 255, 0.5);
+  --color-text-color: #adadad;
+
+  /* General */
+  --container-content: 1440px;
+  --color-background: #0b0b0d;
+  --color-foreground: #fff;
+
+  --text-h1: 96px; /*hero 32, 16*/
+  --text-h1--line-height: 1;
+  --text-h2: 64px;
+  --text-h3: 36px;
+  --text-h4: 20px;
+  --text-subtitle: 32px;
+  --text-badge: 20px;
+  --font-weight-regular: 400;
+  --font-weight-bold: 600;
+
+  /* Colors */
+  --color-button-gradient: radial-gradient(
+    49.51% 66.03% at 50% 92.95%,
+    #74abff 0%,
+    #4254ff 100%
+  );
+  --color-diamond: #74abff;
+  --color-diamond-2: #6c9eff; /* button gradient start */
+  --color-blue: #4254ff; /* button gradient end */
+  --color-blue-dark: rgba(87, 121, 255, 0.35); /* button shadow */
+
+  --color-gray-1: #c3c3c3;
+  --color-gray-2: #949494;
+  --color-gray-3: #747474;
+  --color-gray-4: rgba(255, 255, 255, 0.25);
+  --color-gray-5: rgba(187, 187, 187, 0.15);
+  --color-gray-6: rgba(148, 148, 148, 0.15);
+  --color-gray-7: #2f2f2f;
+  --color-gray-8: rgba(66, 66, 66, 0.2);
+  --color-gray-9: #222222;
+  --color-gray-10: rgba(16, 16, 16, 0.5);
+  --color-gray-11: rgba(0, 0, 0, 0.2);
+  --color-gray-12: rgba(114, 169, 255, 0.02);
+  --color-gray-13: rgba(0, 0, 0, 0.15);
+  --color-gray-14: rgba(34, 34, 34, 0.15);
+  --color-gray-15: rgba(34, 34, 34, 0.25);
+  --color-gray-16: rgba(0, 0, 0, 0.25);
+  /* --radius-floating-md: ; */
+
+  /* Button component */
+  --shadow-button-shadow: 0 1px 25px 0 var(--color-blue-dark);
+  --text-button-lg: 24px;
+  --radius-button-lg: 16px;
+  --spacing-button-py-lg: 24px;
+  --spacing-button-px-lg: 48px;
+  --text-button-md: 20px;
+  --radius-button-md: 12px;
+  --spacing-button-py-md: 12px;
+  --spacing-button-px-md: 24px;
+  --text-button-sm: 12px;
+  --radius-button-sm: 8px;
+  --spacing-button-py-sm: 8px;
+  --spacing-button-px-sm: 20px;
+
+  /* Paper component (wip) */
+  --radius-floating-lg: 23px;
+  --spacing-floating-md: 8px;
+  --spacing-floating-lg: 16px;
+}
+
+@layer base {
+  html {
+    overflow-x: hidden;
+  }
+  body {
+    font-family: var(--font-wix-madefor-text), sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-title-color;
+  }
+}
+
+/* todo: remove */
+@layer utilities {
+  /* offers */
+  .floating-border {
+    @apply floating-border-base;
+    &::before {
+      border: 1px solid transparent;
+      background: linear-gradient(
+          180deg,
+          var(--color-blue) 0%,
+          rgba(66, 84, 255, 0) 107.98%
+        )
+        border-box;
+      mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+      mask-composite: exclude;
+    }
+  }
+  .floating-border-shadow {
+    @apply floating-border-base;
+    &::after {
+      box-shadow: 0 1px 25px #5779ff59;
+    }
+  }
+  .bottom-border {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1;
+      background-color: rgba(255, 255, 255, 0.25);
+
+      z-index: 10;
+    }
+  }
+
+  /* recs/rating-list */
+  .button-before-image-outline::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
+    border-radius: 16px;
+    border: 1px solid transparent;
+    background: linear-gradient(
+        180deg,
+        var(--color-blue) 0%,
+        rgba(66, 84, 255, 0) 107.98%
+      )
+      border-box;
+    mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    /* filter: drop-shadow(0 1px 25px rgba(87, 121, 255, 0.35)); */
+  }
+  .button-before-image-outline::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
+    border-radius: 16px;
+    box-shadow: 0 1px 25px #5779ff59;
+  }
+}
+
+@utility floating-border-base {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
+    border-radius: 16px;
+    z-index: -2;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
+    border-radius: 16px;
+    z-index: -2;
+  }
+}

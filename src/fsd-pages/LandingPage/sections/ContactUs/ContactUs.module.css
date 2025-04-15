@@ -1,0 +1,31 @@
+.decor {
+  position: relative;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-image: url("/illustrations/lp/contactus/form-decor-test.png");
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+  }
+  /* &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-image: url("/illustrations/lp/contactus/form-decor-2.svg");
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+  } */
+}

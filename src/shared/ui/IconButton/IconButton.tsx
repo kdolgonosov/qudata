@@ -1,20 +1,12 @@
 interface IconButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
-  //   icon: string;
-  //   activeIcon?: string;
-  // size: "lg" | "md" | "sm";
-  // outline?: boolean;
   className?: string;
 }
 
 export const IconButton = ({
   children,
   onClick,
-  //   icon,
-  //   activeIcon,
-  // size,
-  // outline = false,
   className = "",
 }: IconButtonProps) => {
   return (
@@ -26,18 +18,6 @@ export const IconButton = ({
       onClick={onClick}
     >
       {children}
-      {/* <img
-        src={activeIcon ? "" : icon} // По умолчанию используем icon
-        alt="icon"
-        className={`w-[16px] h-[16px] ${activeIcon ? "group-open:hidden" : ""}`}
-      />
-      {activeIcon && (
-        <img
-          src={activeIcon}
-          alt="open-icon"
-          className="w-[16px] h-[16px] hidden group-open:block"
-        />
-      )} */}
     </button>
   );
 };

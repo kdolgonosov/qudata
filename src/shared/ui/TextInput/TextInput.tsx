@@ -6,7 +6,7 @@ type InputType = "text" | "email" | "textarea";
 
 interface TextInputProps {
   type?: InputType;
-  icon?: string;
+  Icon?: React.FC<React.SVGProps<SVGSVGElement>>;
   placeholder?: string;
   value?: string;
   onChange?: (value: string) => void;
@@ -16,7 +16,7 @@ interface TextInputProps {
 
 export const TextInput = ({
   type = "text",
-  icon = "/input-icon-name.svg",
+  Icon,
   placeholder = "Введите текст",
   value: controlledValue,
   onChange,
@@ -43,11 +43,8 @@ export const TextInput = ({
 
   return (
     <div className="relative w-full">
-      <div className="absolute inset-y-0 left-0 flex items-center pl-[24px]">
-        <span
-          className="block w-[24px] h-[24px]"
-          style={{ backgroundImage: `url(${icon})`, backgroundSize: "cover" }}
-        />
+      <div className="absolute inset-y-0 left-0 flex items-center pl-6">
+        {Icon && <Icon width={24} height={24} />}
       </div>
       {/* {isTextarea ? (
         <textarea

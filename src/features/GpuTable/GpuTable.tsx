@@ -1,5 +1,7 @@
 import React from "react";
 import { Button } from "@/shared/ui";
+import { Sort } from "@/shared/icons";
+
 const mockData = [
   {
     id: 1,
@@ -7,6 +9,7 @@ const mockData = [
     hoster: {
       id: 1,
       name: "Voltage Park",
+      icon: "https://placehold.co/60",
     },
     count_gpu: 1,
     ram_gpu: 80,
@@ -87,12 +90,17 @@ const rows = mockData.map((item, id) => {
       className={`h-[43px] ${id < mockData.length - 1 ? "bottom-border" : ""}`}
     >
       <td className="underline text-left">{item.model_cpu}</td>
-      <td className="underline ">{item.hoster.name}</td>
+      <td className="underline flex gap-2 items-center">
+        <Sort width={14} height={14} color="#fff" />
+        {item.hoster.name}
+      </td>
       <td className=" text-center">{item.count_gpu}</td>
       <td className=" text-center">{item.ram_gpu}GB</td>
       <td className=" text-center">{item.rent_per_hour}&#x20bd;</td>
-      <td className=" text-right">
-        <Button size="sm">Аренда</Button>
+      <td className="flex justify-end text-right ">
+        <Button size="sm" href="#" className="">
+          Аренда
+        </Button>
       </td>
     </tr>
   );
@@ -105,19 +113,24 @@ export const GpuTable = () => {
       <thead className="text-[12px]  border-red-200">
         <tr className="text-[12px] leading-[15px] bottom-border">
           <th scope="col" className="text-start pb-[24px]">
-            Модель GPU
+            Модель GPU{" "}
+            <button className="bg-[url(/icons/filter.svg)] bg-contain w-3.5 h-3.5 ml-1"></button>
           </th>
           <th scope="col" className="text-start pb-[24px]">
-            Хостер
+            Хостер{" "}
+            <button className="bg-[url(/icons/filter.svg)] bg-contain w-3.5 h-3.5 ml-1"></button>
           </th>
           <th scope="col" className="text-center pb-[24px]">
-            Кол-во GPU
+            Кол-во GPU{" "}
+            <button className="bg-[url(/icons/filter.svg)] bg-contain w-3.5 h-3.5 ml-1"></button>
           </th>
           <th scope="col" className="text-center pb-[24px]">
-            ОЗУ GPU
+            ОЗУ GPU{" "}
+            <button className="bg-[url(/icons/filter.svg)] bg-contain w-3.5 h-3.5 ml-1"></button>
           </th>
           <th scope="col" className="text-center pb-[24px]">
-            Аренда в час
+            Аренда в час{" "}
+            <button className="bg-[url(/icons/filter.svg)] bg-contain w-3.5 h-3.5 ml-1"></button>
           </th>
           <th scope="col" className="text-end pb-[24px]">
             Действия

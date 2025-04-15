@@ -2,8 +2,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { SliderItem } from "@/entities";
 import { Navigation } from "swiper/modules";
+import { BlogCard } from "@/shared/ui";
+import { ArrowWideLeft, ArrowWideRight } from "@/shared/icons";
 
 type ISlide = {
   id: number;
@@ -61,7 +62,25 @@ export const Slider = () => {
       <Swiper
         modules={[Navigation]}
         spaceBetween={32}
-        slidesPerView={6}
+        slidesPerView={1}
+        breakpoints={{
+          600: {
+            slidesPerView: 2,
+          },
+          900: {
+            slidesPerView: 3,
+          },
+          1200: {
+            slidesPerView: 4,
+          },
+          1500: {
+            slidesPerView: 5,
+          },
+          1800: {
+            slidesPerView: 6,
+          },
+        }}
+        // centeredSlidesBounds
         navigation={{
           nextEl: ".swiper-button-next-custom",
           prevEl: ".swiper-button-prev-custom",
@@ -70,27 +89,17 @@ export const Slider = () => {
       >
         {mockData.map((slide: ISlide) => (
           <SwiperSlide key={slide.id}>
-            <SliderItem slide={slide} />
+            <BlogCard card={slide} className="h-105" />
           </SwiperSlide>
         ))}
       </Swiper>
       <div className="flex justify-center gap-[40px] mt-[33px]">
-        <span className="swiper-button-prev-custom block bg-[url(/slider-nav-left-disabled.svg)] w-[20px] h-[17px] bg-center bg-contain hover:cursor-pointer"></span>
-        <span className="swiper-button-next-custom block bg-[url(/slider-nav-right-enabled.svg)] w-[20px] h-[17px] bg-center bg-contain hover:cursor-pointer"></span>
-        {/* <IconButton>
-          <img
-            src="/slider-nav-left-disabled.svg"
-            alt="toggle-icon"
-            className={`swiper-button-prev-custom w-[20px] h-[17px]`}
-          />
-        </IconButton>
-        <IconButton>
-          <img
-            src="/slider-nav-right-enabled.svg"
-            alt="toggle-icon"
-            className={`swiper-button-next-custom w-[20px] h-[17px] `}
-          />
-        </IconButton> */}
+        <button className="swiper-button-prev-custom group">
+          <ArrowWideLeft color="#333333" />
+        </button>
+        <button className="swiper-button-next-custom group">
+          <ArrowWideRight />
+        </button>
       </div>
     </div>
   );

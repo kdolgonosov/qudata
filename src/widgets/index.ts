@@ -1,12 +1,3 @@
 export {Header} from '@/widgets/Header/Header'
 export {Footer} from '@/widgets/Footer/Footer'
-export {HeroSection} from '@/widgets/HeroSection/HeroSection'
-export {FeaturesSection} from '@/widgets/FeaturesSection/FeaturesSection'
-export {OffersSection} from '@/widgets/OffersSection/OffersSection'
-export {RecommendationsSection} from '@/widgets/RecommendationsSection/RecommendationsSection'
-export {MapSection} from '@/widgets/MapSection/MapSection'
-export {BlogSection} from '@/widgets/BlogSection/BlogSection'
-export {FaqSection} from '@/widgets/FaqSection/FaqSection'
-export {JoinUsSection} from '@/widgets/JoinUsSection/JoinUsSection'
-export {ContactUsSection} from '@/widgets/ContactUsSection/ContactUsSection'
 

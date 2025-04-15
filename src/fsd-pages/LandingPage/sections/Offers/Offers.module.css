@@ -1,0 +1,29 @@
+.decor {
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: -65px;
+    background-image: url("/illustrations/lp/offers/offers-decor-1.png");
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    width: 75px;
+    height: 385px;
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 15px;
+    right: -65px;
+    background-image: url("/illustrations/lp/offers/offers-decor-2.png");
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    width: 65px;
+    height: 326px;
+  }
+}

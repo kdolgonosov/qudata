@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Wix_Madefor_Text } from "next/font/google";
-import "./globals.css";
+import "@/app/styles/globals.css";
 
 const wixMadeforText = Wix_Madefor_Text({
   variable: "--font-wix-madefor-text",

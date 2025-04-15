@@ -1,0 +1,253 @@
+/* features-decor-1
+features-decor-2-3
+features-decor-card1-1-2
+features-decor-card2
+features-decor-card3-1-2
+features-decor-card4 */
+.decor_1 {
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-repeat: no-repeat;
+    top: -70px;
+    left: 0;
+    background-image: url("/illustrations/lp/features/features-decor-1.svg");
+    background-size: cover;
+    background-position: left;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+}
+.decor_2_3 {
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-repeat: no-repeat;
+    top: -70px;
+    left: -60px;
+    background-image: url("/illustrations/lp/features/features-decor-2.png");
+    background-position: center;
+    width: 673px;
+    height: 250px;
+    z-index: -1;
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-repeat: no-repeat;
+    bottom: -29px;
+    right: -61px;
+    background-image: url("/illustrations/lp/features/features-decor-3.png");
+    background-size: cover;
+    background-position: center;
+    width: 673px;
+    height: 118px;
+    z-index: -1;
+  }
+}
+.decorCard_1_1_2 {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 28px;
+    background-image: url("/illustrations/lp/features/features-decor-card1-1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 300px;
+    height: 300px;
+    z-index: -2;
+  }
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: url("/illustrations/lp/features/features-decor-card1-2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 611px;
+    height: 407px;
+    z-index: -2;
+  }
+}
+@media (max-width: 1280px) {
+  .decorCard_1_1_2::after {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .decorCard_1_1_2::before {
+    width: 372px;
+    height: 248px;
+    bottom: 0;
+    left: -219px;
+    background-position: right;
+  }
+}
+.decorCard_2 {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("/illustrations/lp/features/features-decor-card2.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+  }
+}
+.decorCard_3_1_2 {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url("/illustrations/lp/features/features-decor-card3-2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+  }
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url("/illustrations/lp/features/features-decor-card3-1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 300px;
+    z-index: -2;
+  }
+}
+@media (max-width: 1280px) {
+  .decorCard_3_1_2::after {
+    /* display: none; */
+  }
+  .decorCard_3_1_2::before {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .decorCard_3_1_2::after {
+    /* display: none; */
+  }
+}
+.decorCard_4 {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -91px;
+    left: -119px;
+    background-image: url("/illustrations/lp/features/features-decor-card4-1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 300px;
+    z-index: -2;
+  }
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url("/illustrations/lp/features/features-decor-card4-2-3.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 300px;
+    z-index: -2;
+  }
+}
+@media (max-width: 1280px) {
+  .decorCard_4::after {
+    display: none;
+  }
+  .decorCard_4::before {
+    /* display: none; */
+  }
+}
+@media (max-width: 768px) {
+  .decorCard_4::before {
+    /* display: none; */
+  }
+}
+
+.gradient_border_base {
+  position: relative;
+  &::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid transparent;
+    mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    z-index: 10;
+  }
+}
+.gradient_features_card_1 {
+  &::before {
+    border-radius: 23px;
+    background: linear-gradient(
+        250deg,
+        var(--color-gray-3) 0%,
+        var(--color-gray-7) 100%
+      )
+      border-box;
+  }
+}
+.gradient_features_card_3 {
+  &::before {
+    border-radius: 23px;
+    background: linear-gradient(
+        80deg,
+        var(--color-gray-3) 0%,
+        var(--color-gray-7) 100%
+      )
+      border-box;
+  }
+}
+.gradient_features_card_4 {
+  &::before {
+    border-radius: 23px;
+    background: linear-gradient(
+        100deg,
+        var(--color-gray-3) 0%,
+        var(--color-gray-7) 100%
+      )
+      border-box;
+  }
+}

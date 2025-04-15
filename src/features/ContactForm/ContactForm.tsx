@@ -1,5 +1,6 @@
 "use client";
 
+import { InputEmail, InputMessage, InputName } from "@/shared/icons";
 import { Button, TextInput } from "@/shared/ui";
 import { useState } from "react";
 
@@ -20,7 +21,7 @@ export const ContactForm = ({ className = "" }: { className?: string }) => {
       <div className="w-full flex flex-col gap-[24px]">
         <TextInput
           type="text"
-          icon="/input-icon-name.svg"
+          Icon={InputName}
           placeholder="Как к вам обращаться?"
           value={formData.name}
           onChange={handleInputChange("name")}
@@ -29,7 +30,7 @@ export const ContactForm = ({ className = "" }: { className?: string }) => {
         />
         <TextInput
           type="email"
-          icon="/input-icon-email.svg"
+          Icon={InputEmail}
           placeholder="Ваш электронный адрес"
           value={formData.email}
           onChange={handleInputChange("email")}
@@ -38,7 +39,7 @@ export const ContactForm = ({ className = "" }: { className?: string }) => {
         />
         <TextInput
           type="textarea"
-          icon="/input-icon-message.svg"
+          Icon={InputMessage}
           placeholder="Опишите ваш вопрос"
           value={formData.message}
           onChange={handleInputChange("message")}
@@ -46,7 +47,9 @@ export const ContactForm = ({ className = "" }: { className?: string }) => {
           required
         />
       </div>
-      <Button size="lg">Отправить сообщение</Button>
+      <Button size="lg" withArrow>
+        Отправить сообщение
+      </Button>
     </form>
   );
 };

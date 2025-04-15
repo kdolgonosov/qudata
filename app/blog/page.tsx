@@ -1,1 +1,1 @@
-export { BlogPage as default } from "@/pages";
+export { BlogPage as default } from "@/fsd-pages";

@@ -1,1 +1,1 @@
-export { LandingPage as default } from "@/pages";
+export { LandingPage as default } from "@/fsd-pages";

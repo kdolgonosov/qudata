@@ -1,0 +1,42 @@
+.gradient {
+  background-image: radial-gradient(
+    49.51% 66.03% at 50% 92.95%,
+    var(--color-diamond) 0%,
+    var(--color-blue) 100%
+  );
+}
+.shadow {
+  box-shadow: 0 1px 25px 0 var(--color-blue-dark);
+}
+.floating_border {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
+    border-radius: 16px;
+    z-index: -2;
+    border: 1px solid transparent;
+    background: linear-gradient(
+        180deg,
+        var(--color-blue) 0%,
+        rgba(66, 84, 255, 0) 107.98%
+      )
+      border-box;
+    mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: calc(100% + 16px);
+    height: calc(100% + 16px);
+    border-radius: 16px;
+    z-index: -2;
+  }
+}

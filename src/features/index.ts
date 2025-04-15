@@ -1,4 +1,4 @@
-export {AccordionList} from'@/features/AccordionList/AccordionList'
+// export {AccordionList} from'@/shared/ui/AccordionList/AccordionList'
 export {ContactForm} from'@/features/ContactForm/ContactForm'
 export {Slider} from'@/features/Slider/Slider'
 export {RatingList} from'@/features/RatingList/RatingList'

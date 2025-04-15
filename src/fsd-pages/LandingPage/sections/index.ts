@@ -1,0 +1,10 @@
+export {Hero} from './Hero/Hero'
+export {Features} from './Features/Features'
+export {Offers} from './Offers/Offers'
+export {Recommendations} from './Recommendations/Recommendations'
+export {CompareMap} from './CompareMap/CompareMap'
+export {Blog} from './Blog/Blog'
+export {Faq} from './Faq/Faq'
+export {JoinUs} from './JoinUs/JoinUs'
+export {ContactUs} from './ContactUs/ContactUs'
+
